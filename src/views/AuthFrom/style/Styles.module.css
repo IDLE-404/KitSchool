@@ -1,0 +1,120 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.boxItem {
+  min-height: 100vh;
+  position: relative;
+}
+
+.backgroundBoll {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+.containerForms {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftBox {
+  width: 50%;
+  background-image: url(/public/png/authForm/formregister.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+.image {
+  height: 200px;
+  border-radius: 8px;
+}
+.registerForm {
+  width: 80%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.registerForm::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  inset: 0;
+  z-index: -1;
+  filter: blur(100px);
+  opacity: 0.1;
+}
+.boxWellcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.titleWellcome {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+}
+.textWellcome {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.rightBox {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 40%;
+}
+.formItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* groupInput */
+
+.groupInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+.groupInput label {
+  font-size: 18px;
+  opacity: 0.6;
+}
+.groupInput input {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 16px;
+  font-size: 18px;
+  background: transparent;
+  opacity: 0.8;
+}
+.groupInput input:focus {
+  outline: none;
+}
