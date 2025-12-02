@@ -3,96 +3,122 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(
+      circle at 20% 18%,
+      #e5ecff 0%,
+      rgba(231, 238, 255, 0.7) 28%,
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 82% 6%,
+      #d6e7ff 0%,
+      rgba(214, 231, 255, 0.6) 32%,
+      transparent 52%
+    ),
+    #e7eeff;
 }
-
+.backgroundBoll {
+  position: absolute;
+  width: 100%;
+}
 .boxItem {
   min-height: 100vh;
   position: relative;
 }
 
-.backgroundBoll {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  height: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  pointer-events: none;
-}
 .containerForms {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 48px 24px;
 }
 .leftBox {
-  width: 50%;
-  background-image: url(/public/png/authForm/formregister.png);
+  width: 100%;
+  background-image: linear-gradient(
+      135deg,
+      rgba(14, 165, 233, 0.6),
+      rgba(76, 29, 149, 0.35)
+    ),
+    url(/public/png/authForm/formregister.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 8px;
+  border-radius: 22px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 520px;
 }
 .image {
   height: 200px;
   border-radius: 8px;
 }
 .registerForm {
-  width: 80%;
-  height: 80%;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
+  width: min(1150px, 100%);
+  min-height: 640px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 22px;
+  padding: 26px;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.18);
 }
 
 .registerForm::after {
   content: "";
   position: absolute;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
   inset: 0;
-  z-index: -1;
-  filter: blur(100px);
-  opacity: 0.1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.05)
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 .boxWellcome {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
+  gap: 8px;
 }
 .titleWellcome {
-  font-size: 32px;
-  text-align: center;
+  font-size: 30px;
+  text-align: left;
   font-weight: 700;
+  color: #0f172a;
 }
 .textWellcome {
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.5);
-  text-align: center;
+  font-size: 16px;
+  color: #475569;
+  text-align: left;
+  line-height: 1.5;
 }
 .rightBox {
-  padding: 32px;
+  padding: 42px 46px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  width: 40%;
+  gap: 26px;
+  position: relative;
+  z-index: 1;
 }
 .formItem {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px 16px;
 }
 
 /* groupInput */
@@ -101,20 +127,127 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 6px;
+  gap: 8px;
 }
 .groupInput label {
-  font-size: 18px;
-  opacity: 0.6;
+  font-size: 14px;
+  opacity: 1;
+  color: #1f2937;
+  font-weight: 600;
 }
 .groupInput input {
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
-  border-radius: 16px;
-  font-size: 18px;
-  background: transparent;
-  opacity: 0.8;
+  border: 1px solid #d8e3ff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  background: #f9fbff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 .groupInput input:focus {
   outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.leftBox::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.35),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(255, 255, 255, 0.28),
+      transparent 45%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+.leftContent {
+  position: absolute;
+  inset: auto 28px 28px 28px;
+  display: grid;
+  gap: 12px;
+  color: #f8fafc;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(4px);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.leftTitle {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.leftText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.submitButton {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.24);
+}
+
+@media (max-width: 960px) {
+  .registerForm {
+    grid-template-columns: 1fr;
+  }
+
+  .leftBox {
+    min-height: 260px;
+  }
+
+  .rightBox {
+    padding: 28px 26px 36px;
+  }
 }
