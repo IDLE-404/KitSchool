@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./style/Styles.module.css";
 import BackgroundBoll from "./components/backgroundBoll/BackgroundBoll";
 
 const AuthForm = () => {
+  const [role, setRole] = useState("student");
+
   return (
     <div className={styles.container}>
       <div className={styles.backgroundBoll}>
@@ -36,9 +38,24 @@ const AuthForm = () => {
                 <span>Ваша роль</span>
               </div>
               <div className={styles.boxBtnRole}>
-                <button className={styles.btnRole}>Ученик</button>
-                <button className={styles.btnRole}>Учитель</button>
-                <button className={styles.btnRole}>Админ</button>
+                <button
+                  className={styles.btnRole}
+                  onClick={() => setRole("student")}
+                >
+                  Ученик
+                </button>
+                <button
+                  className={styles.btnRole}
+                  onClick={() => setRole("teacher")}
+                >
+                  Учитель
+                </button>
+                <button
+                  className={styles.btnRole}
+                  onClick={() => setRole("admin")}
+                >
+                  Админ
+                </button>
               </div>
             </div>
             <form action="" className={styles.formItem}>
@@ -50,6 +67,12 @@ const AuthForm = () => {
                 <label htmlFor="">Почта</label>
                 <input type="text" />
               </div>
+              {role === "teacher" && (
+                <div className={styles.groupInput}>
+                  <label htmlFor="">Предмет</label>
+                  <input type="text" />
+                </div>
+              )}
               <div className={styles.groupInput}>
                 <label htmlFor="">Пароль</label>
                 <input type="text" />
