@@ -251,3 +251,48 @@
     padding: 28px 26px 36px;
   }
 }
+
+/* Role */
+
+.containerRole {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.titleRole{
+  font-size: 24px;
+  font-weight: 600;
+}
+.boxBtnRole {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.btnRole {
+  font-size: 22px;
+  border: 1px solid #d8e3ff;
+  padding: 8px 22px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+
+  transition: all 0.3s ease-in-out inherit;
+
+  &:hover {
+    border-color: #195aff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #195aff;
+    box-shadow: 0 0 0 4px rgba(25, 90, 255, 0.25);
+  }
+}

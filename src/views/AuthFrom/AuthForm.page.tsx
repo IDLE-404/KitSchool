@@ -7,7 +7,6 @@ const AuthForm = () => {
     <div className={styles.container}>
       <div className={styles.backgroundBoll}>
         <BackgroundBoll />
-        <span>12312</span>
       </div>
       <div className={styles.containerForms}>
         <div className={styles.registerForm}>
@@ -31,6 +30,16 @@ const AuthForm = () => {
                 Наша платформа поможет вам войти в мир программирования и найти
                 единомышленников
               </p>
+            </div>
+            <div className={styles.containerRole}>
+              <div className={styles.titleRole}>
+                <span>Ваша роль</span>
+              </div>
+              <div className={styles.boxBtnRole}>
+                <button className={styles.btnRole}>Ученик</button>
+                <button className={styles.btnRole}>Учитель</button>
+                <button className={styles.btnRole}>Админ</button>
+              </div>
             </div>
             <form action="" className={styles.formItem}>
               <div className={styles.groupInput}>
